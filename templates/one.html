@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content remains unchanged -->
+    <script>
+        // Enter full-screen mode
+        function enterFullScreen() {
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Function to show the overlay with alert box
+        function showAlert() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "block";
+        }
+
+        // Function to hide the overlay
+        function hideAlert() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "none";
+        }
+
+        // Function to confirm full-screen mode
+        function confirmFullScreen() {
+            var confirmFullScreen = confirm("Do you want to enter full-screen mode?");
+            if (confirmFullScreen) {
+                // Call enterFullScreen function
+                enterFullScreen();
+                // Hide the overlay after confirming
+                hideAlert();
+            } else {
+                // Redirect to logout page or perform logout action
+                window.location.href = "/dropsession";
+            }
+        }
+
+    </script>
+    <style>
+        /* Style for overlay */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        /* Style for alert box */
+        #alertBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        /* Style for full-screen button */
+        #fullScreenBtn {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body onload="showAlert()">
+    <!-- Overlay with alert box -->
+    <div id="overlay">
+        <div id="alertBox">
+            <p>Do you want to enter full-screen mode?</p>
+            <button id="fullScreenBtn" onclick="confirmFullScreen()">Enter Full-Screen</button>
+        </div>
+    </div>
+
+    <!-- Your body content remains unchanged -->
+    <!-- ... -->
+</body>
+
+</html>

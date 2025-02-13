@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result Email</title>
+</head>
+
+<body style="font-family: Arial, sans-serif;">
+
+    <h1>Quiz Result</h1>
+
+    <p>Hello {{ g.user }},</p>
+
+    <p>Here is the result of your quiz:</p>
+
+    <p>Total questions: {{ total }}</p>
+
+    <p>Correct answers: {{ correct }}</p>
+
+    <h2>Correct MCQs</h2>
+    <ul>
+        {% for mcq in correct_mcqs %}
+        <li>
+            <strong>Question {{ mcq.question_number }}:</strong> {{ mcq.question }}<br>
+            Your answer: {{ mcq.user_answer }}<br>
+            Correct answer: {{ mcq.correct_answer }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Incorrect MCQs</h2>
+    <ul>
+        {% for mcq in incorrect_mcqs %}
+        <li>
+            <strong>Question {{ mcq.question_number }}:</strong> {{ mcq.question }}<br>
+            Your answer: {{ mcq.user_answer }}<br>
+            Correct answer: {{ mcq.correct_answer }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p>Thank you for taking the quiz!</p>
+
+</body>
+
+</html>
