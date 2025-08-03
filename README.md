@@ -33,38 +33,34 @@
 
 ## 📦 Installation
 
-quizifer/
-├── pycache/ # Compiled Python files
-│
-├── env/ # Virtual environment
-│ ├── Lib/site-packages/
-│ ├── Scripts/
-│ └── pyvenv.cfg
-│
-├── pdf/ # PDF upload folder
-│ └── 0124114547cloud.pdf
-│
-├── assets/ # Frontend assets
-│ ├── css/
-│ └── scripts/
-│
-├── templates/ # HTML templates for Flask app
-│
-├── app.py # Main app file (Flask or CLI)
-├── question_extraction.py # Extracts sentences from PDF text
-├── question_generation_main.py # Generates question-answer pairs
-├── incorrect_answer_generation.py # Creates distractor options
-├── qgenDummy.py # Optional mock or test script
-├── downloadwordnet.py # Downloads NLTK WordNet
-├── incorrect_answers.txt # Stores incorrect options
-├── question_extraction_output.txt # Output log for questions
-├── README.md # This file
-├── package.json # For future frontend (optional)
-└── package-lock.json
-
-yaml
-Copy
-Edit
+quizifer:
+  __pycache__:
+    - incorrect_answer_generation.cpython-3xx.pyc
+    - question_extraction.cpython-3xx.pyc
+    - question_generation_main.cpython-3xx.pyc
+    - workers.cpython-3xx.pyc
+  env:
+    Lib/
+      site-packages/
+    Scripts/
+    pyvenv.cfg
+  pdf:
+    - 0124114547cloud.pdf
+  assets:
+    css/
+    scripts/
+  templates/
+  app.py
+  downloadwordnet.py
+  incorrect_answer_generation.py
+  incorrect_answers.txt
+  package.json
+  package-lock.json
+  question_extraction.py
+  question_extraction_output.txt
+  question_generation_main.py
+  qgenDummy.py
+  README.md
 
 
 ```bash
