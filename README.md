@@ -27,12 +27,6 @@
 
 ## 📁 Project Structure
 
-
-
----
-
-## 📦 Installation
-
 quizifer:
   __pycache__:
     - incorrect_answer_generation.cpython-3xx.pyc
@@ -62,6 +56,10 @@ quizifer:
   qgenDummy.py
   README.md
 
+
+---
+
+## 📦 Installation
 
 ```bash
 git clone https://github.com/your-username/quizifer.git
